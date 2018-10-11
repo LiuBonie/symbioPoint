@@ -1,0 +1,4 @@
+# symbioPoint
+symbio积分系统
+此系统是对member进行一个积分的CRUD记录操作系统
+使用valang对前端数据进行校验。
