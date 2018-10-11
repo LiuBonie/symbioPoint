@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+
+
+  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+       default-autowire="byName">
+       
+ <context:annotation-config />
+
+<bean id="membershipVoValidator" class="com.symbio.valang.MembershipVoValidator">
+
+    <property name="valang">
+
+       <value>
+
+           <![CDATA[
+
+           
+ 		   { lastName : ? is not null and ? has text and length(?)<= 8 : 'lastName is empty or too long.'}
+           
+           { firstName : ? is not null and ? has text and length(?)<= 8 : 'firstName is empty or too long.'}
+ 
+		   { email : ? is not null and ? has text : 'email is null.'}   
+
+		   { address :  ? is not null and ? has text : 'Address is empty.'}
+		   
+		   { cellPhone : ? is not null and ? has text and length(?)<= 11 : 'cellPhone is empty or too long.'	}
+           
+           { initialDttm : ? is not null and ? has text : 'initialDttm is empty.'	}
+           
+           { membershipNum : ? is not null and ? has text and length(?)<= 30 : 'membershipNum is empty or too long.'}
+           
+           { statusId : ? is not null and ? has text and length(?)<= 11 : 'statusId is empty or too long.'}
+           
+           { lastUpdateById : ? is not null and ? has text and length(?)<= 100 : 'lastUpdateById is empty or too long.'}
+           
+           { lastUpdateDttm : ? is not null and ? has text : 'lastUpdateDttm is empty.'}
+           
+           { createdbyId : ? is not null and ? has text and length(?)<= 100 : 'createdbyId is empty or too long.'}
+           
+           { createdDttm : ? is not null and ? has text : 'createdDttm is empty.'}
+           
+           { enterpriseCd : ? is not null and ? has text and length(?)<= 10 : 'enterpriseCd is empty or too long.'}
+           
+           { productLineId : ? is not null and ? has text and length(?)<= 11 : 'productLineId is empty or too long.'}
+           
+           { externalMembershipId : ? is not null and ? has text : 'externalMembershipId is empty or too long.'}
+           
+           { memberTypeId : ? is not null and  ? has text and length(?)<= 11 : 'memberTypeId is empty or too long.'}
+           
+           { sourceCompanyId : ? is not null and  ? has text and length(?)<= 11 : 'sourceCompanyId is empty or too long.'}
+
+          
+           ]]>
+
+       </value>
+
+    </property>  
+
+</bean>
+
+</beans>
